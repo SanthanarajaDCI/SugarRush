@@ -1,16 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.SceneManagement;
+
 public class LevelManager : MonoBehaviour
 {
     // Start is called before the first frame update
-   
-    void Start()
-    {
-        
-    }
+
+    void Start() { }
 
     // Update is called once per frame
     void Update()
@@ -39,7 +36,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void LoadHelp()
-    { 
+    {
         SceneManager.LoadScene(1);
     }
 
@@ -48,5 +45,4 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Mainmenu Called");
         SceneManager.LoadScene(0);
     }
-
 }
