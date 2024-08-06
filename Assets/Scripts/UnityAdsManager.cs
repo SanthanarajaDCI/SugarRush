@@ -5,8 +5,11 @@ public class UnityAdsManager : MonoBehaviour, IUnityAdsInitializationListener, I
 {
     [SerializeField] private string androidGameId = "5664269";
     [SerializeField] private string iosGameId = "5664268";
-    [SerializeField] private string adUnitId = "Rewarded_Android";
+    [SerializeField] private string adUnitIdAndroid = "Rewarded_Android";
+    [SerializeField] private string adUnitIdiOS = "Rewarded_iOS";
     private string gameId;
+
+    private string adUnitId;
     private bool testMode = true;
 
     void Start()
@@ -23,7 +26,12 @@ public class UnityAdsManager : MonoBehaviour, IUnityAdsInitializationListener, I
     }
 
     public void ShowRewardedVideo()
+
     {
+
+        adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer)
+            ? adUnitIdiOS
+            : adUnitIdAndroid;
         Advertisement.Load(adUnitId, this);
     }
 
